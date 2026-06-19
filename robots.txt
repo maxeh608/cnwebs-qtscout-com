@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maxeh608.github.io/cnwebs-qtscout-com/sitemap.xml

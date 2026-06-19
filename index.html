@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>球探 · 知识库入口指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: #f0f2f5;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* hero 区域 */
+    .hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      background: linear-gradient(145deg, #f7f9fc, #eef1f5);
+      border-radius: 28px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .hero h1 {
+      font-weight: 540;
+      font-size: 2.2rem;
+      letter-spacing: -0.02em;
+      color: #1f2a3f;
+    }
+
+    .hero h1 span {
+      background: #d4dee8;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9em;
+      color: #1d3142;
+    }
+
+    .hero .sub {
+      max-width: 640px;
+      margin: 1.2rem auto 0;
+      font-size: 1.05rem;
+      color: #3b4b5e;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 1.2rem;
+    }
+
+    /* 卡片通用 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e4e9f0;
+      border-radius: 24px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h2 {
+      font-size: 1.35rem;
+      font-weight: 520;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #e9eef3;
+      display: inline-block;
+    }
+
+    .card p,
+    .card li {
+      font-size: 0.98rem;
+      color: #2b3e51;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card li {
+      padding: 0.3rem 0 0.3rem 1.6rem;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "·";
+      position: absolute;
+      left: 0.4rem;
+      color: #7f95b0;
+      font-weight: 700;
+    }
+
+    .badge-light {
+      display: inline-block;
+      background: #eef2f8;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.78rem;
+      color: #2b4055;
+      border: 1px solid #dce3ec;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .tip-box {
+      background: #f6f9fe;
+      border-left: 4px solid #b6c9dc;
+      padding: 1rem 1.4rem;
+      border-radius: 16px;
+      margin: 1.2rem 0 0.5rem;
+      font-size: 0.96rem;
+    }
+
+    .faq-item {
+      margin-top: 1rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 540;
+      color: #1d2f40;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      margin-top: 0.15rem;
+      color: #3a4b5e;
+    }
+
+    .link-sentence {
+      font-size: 0.95rem;
+      background: #f4f7fb;
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      display: inline-block;
+      border: 1px solid #dce4ed;
+    }
+
+    a {
+      color: #1d4b6e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-bottom-color: #1d4b6e;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #dce2ea;
+      font-size: 0.86rem;
+      color: #4a6078;
+    }
+
+    .footer-note a {
+      border-bottom: 1px solid #b6c9dc;
+    }
+
+    /* 响应式 */
+    @media (min-width: 680px) {
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+      .card-wide {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (min-width: 960px) {
+      body {
+        padding: 3rem 2rem;
+      }
+      .hero {
+        padding: 4rem 3rem 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- hero -->
+  <header class="hero">
+    <h1>简明指南 · <span>球探</span> 知识库</h1>
+    <p class="sub">
+      从核心定义到使用思路，这里汇总了关于 <a href="https://cnwebs-qtscout.com">球探</a> 的基础信息与操作提醒。<br>
+      无论你是初次接触还是希望快速查阅要点，都可以从这里开始。
+    </p>
+  </header>
+
+  <!-- 卡片网格 两列 -->
+  <div class="card-grid">
+
+    <!-- 卡片1：基本介绍 -->
+    <div class="card">
+      <h2>基本介绍</h2>
+      <p><a href="https://cnwebs-qtscout.com">球探</a> 是一个围绕数据观察与信息整合设计的工具型平台，帮助用户快速梳理特定领域的内容脉络。它并非传统意义上的单一信息源，而是更接近一个轻量级的线索聚合入口。</p>
+      <div class="tip-box">
+        <strong style="font-weight:500;">一句话概括</strong><br>
+        如果你需要从分散的信息中获取结构化的提示，<a href="https://cnwebs-qtscout.com">球探</a> 可以作为一个起点。
+      </div>
+    </div>
+
+    <!-- 卡片2：适用场景 -->
+    <div class="card">
+      <h2>常见使用场景</h2>
+      <ul>
+        <li>日常信息浏览与初步筛选</li>
+        <li>对特定主题进行快速侧写</li>
+        <li>整理公开可用的参考线索</li>
+        <li>辅助判断信息的相关性和时效</li>
+      </ul>
+      <p style="margin-top:0.8rem;font-size:0.9rem;color:#4b627c;">以上场景均以合法、合规为前提，请自行甄别信息来源。</p>
+    </div>
+
+    <!-- 卡片3：访问提示区 (宽卡) -->
+    <div class="card card-wide">
+      <h2>访问与使用提醒</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1.2rem;">
+        <div style="flex:1;min-width:180px;">
+          <span class="badge-light">环境准备</span>
+          <p style="margin-top:0.6rem;">建议使用主流浏览器并保持网络通畅。部分功能可能依赖 JavaScript 运行环境，请勿完全禁用脚本。</p>
+        </div>
+        <div style="flex:1;min-width:180px;">
+          <span class="badge-light">信息甄别</span>
+          <p style="margin-top:0.6rem;">平台所呈现的内容均来自公开可访问的渠道，请结合自身经验对结果进行核实与判断。</p>
+        </div>
+        <div style="flex:1;min-width:180px;">
+          <span class="badge-light">频率与效率</span>
+          <p style="margin-top:0.6rem;">合理控制使用频次，避免对单一来源过度依赖。建议搭配其他工具交叉参考。</p>
+        </div>
+      </div>
+      <div style="margin-top:1.2rem;border-top:1px solid #e3eaf1;padding-top:1rem;">
+        <span class="link-sentence">📎 如果你还没有明确的方向，不妨先尝试从 <a href="https://cnwebs-qtscout.com">球探</a> 的默认视图开始熟悉。</span>
+      </div>
+    </div>
+
+    <!-- 卡片4：FAQ 摘要 -->
+    <div class="card card-wide">
+      <h2>常见疑问摘要</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+        <div class="faq-item">
+          <strong>是否需要注册或付费？</strong>
+          <p>当前 <a href="https://cnwebs-qtscout.com">球探</a> 的基础浏览功能无需注册，可直接使用。未来若有调整会通过页面公告说明。</p>
+        </div>
+        <div class="faq-item">
+          <strong>数据更新频率如何？</strong>
+          <p>平台会按常规周期刷新索引内容，但具体时效性请以实际显示为准，不存在实时保证。</p>
+        </div>
+        <div class="faq-item">
+          <strong>移动端体验如何？</strong>
+          <p>页面已做基础响应式适配，在手机浏览器上可正常阅读与操作，部分布局会自适应调整。</p>
+        </div>
+        <div class="faq-item">
+          <strong>遇到异常或空白怎么办？</strong>
+          <p>可尝试刷新页面、检查网络代理设置，或稍后重试。目前没有人工客服通道，请自行排查。</p>
+        </div>
+      </div>
+      <div style="margin-top:1rem;background:#f0f4fa;padding:0.6rem 1.2rem;border-radius:40px;font-size:0.9rem;">
+        💡 更多细节建议直接在 <a href="https://cnwebs-qtscout.com">球探</a> 页面内探索，不同视图下展示的内容会有差异。
+      </div>
+    </div>
+
+    <!-- 卡片5：相关信息区（目录感） -->
+    <div class="card card-wide">
+      <h2>相关信息 · 目录索引</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:1.8rem;">
+        <div>
+          <p style="font-weight:500;margin-bottom:0.2rem;">🧭 内容方向</p>
+          <ul>
+            <li>线索聚合 / 信息快照</li>
+            <li>公开数据参考</li>
+            <li>轻量级观察工具</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:500;margin-bottom:0.2rem;">📋 使用原则</p>
+          <ul>
+            <li>保持批判性思维</li>
+            <li>不代替专业判断</li>
+            <li>尊重各平台规则</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:500;margin-bottom:0.2rem;">🔗 相关链接</p>
+          <ul>
+            <li><a href="https://cnwebs-qtscout.com">球探</a>（主站）</li>
+            <li>无其他关联站点</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:1rem;font-size:0.88rem;color:#486076;border-left:2px solid #cbdae7;padding-left:1rem;">
+        本页仅作为信息指引，不构成任何形式的推荐或保证。所有操作请以实际页面为准。
+      </p>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <p>页面内容仅为知识库式介绍，由使用者自行判断。 · 关于 <a href="https://cnwebs-qtscout.com">球探</a> 的更多细节，请直接访问主站。</p>
+    <p style="margin-top:0.4rem;color:#7b8da0;">更新于最近 · 简洁指引版</p>
+  </div>
+
+</div>
+</body>
+</html>
